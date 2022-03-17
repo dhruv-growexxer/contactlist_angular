@@ -15,11 +15,11 @@ export class ContactsComponent implements OnInit {
   last_name: string;
   phone: string;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.contactService
       .getContacts()
-      .subscribe((contacts) => (this.contacts = contacts));
+      .subscribe((contacts: any) => (this.contacts = contacts));
   }
 }
